@@ -14,22 +14,18 @@ const images = [
 ];
 const adList = document.querySelector('.gallery');
 const elements = images.map((option) => 
-`<li><img class="images" src="${option.url}" alt="${option.alt}" width="375" height="220" /></li>`).join("");
+`<li class="item"><img class="images" src="${option.url}" alt="${option.alt}" width="375" height="220" /></li>`).join("");
 adList.insertAdjacentHTML("afterbegin", elements);
-const styleImg = document.querySelectorAll('li');
 adList.style.display = "flex";
 adList.style.flexWrap = "wrap";
 adList.style.marginLeft = "-30px";
 adList.style.marginTop = "-30px";
-styleImg[0].style.flexBasis = "calc(100% / 3 - 30px)";
-styleImg[0].style.marginLeft = "30px";
-styleImg[0].style.marginTop = "30px";
-styleImg[1].style.flexBasis = "calc(100% / 3 - 30px)";
-styleImg[1].style.marginLeft = "30px";
-styleImg[1].style.marginTop = "30px";
-styleImg[2].style.flexBasis = "calc(100% / 3 - 30px)";
-styleImg[2].style.marginLeft = "30px";
-styleImg[2].style.marginTop = "30px";
+const styleImg = document.querySelectorAll('.item');
+styleImg.forEach((elem) => {
+  elem.style.flexBasis = "calc(100% / 3 - 30px)";
+  elem.style.marginLeft = "30px";
+  elem.style.marginTop = "30px";
+})
 
 
 
